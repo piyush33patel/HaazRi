@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">HaazRi</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">USER NAME</string>
+    <string name="nav_header_subtitle">user.email@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_account">Account</string>
+    <string name="menu_messages">Messages</string>
+    <string name="menu_notifications">Notifications</string>
+    <string name="menu_contact">Contact Us</string>
+    <string name="menu_updates">Updates</string>
+    <string name="menu_log_out">Log Out</string>
+
+
+    <string name="mark_attendance_notice">NOTE: It is treated as NO CLASS HAPPENED if both the switches are unmarked</string>
+
+    <string name="tab_text_1">MARK ATTENDANCE</string>
+    <string name="tab_text_2">VIEW ATTENDANCE</string>
+
+
+    <string-array name="semester">
+        <item>-Select your Semester-</item>
+        <item>FIRST</item>
+        <item>SECOND</item>
+        <item>THIRD</item>
+        <item>FOURTH</item>
+        <item>FIFTH</item>
+        <item>SIXTH</item>
+        <item>SEVENTH</item>
+        <item>EIGHTH</item>
+    </string-array>
+
+    <string-array name="branches">
+        <item>-Select your Branch-</item>
+        <item>Not Applicable</item>
+        <item>CSE</item>
+        <item>MEE</item>
+        <item>CHE</item>
+        <item>ECE</item>
+        <item>IT</item>
+        <item>MSME</item>
+    </string-array>
+
+    <string-array name="year">
+        <item>-Select your Year-</item>
+        <item>FIRST</item>
+        <item>SECOND</item>
+        <item>THIRD</item>
+        <item>FOURTH</item>
+    </string-array>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
