@@ -15,6 +15,7 @@
             layout="@layout/toolbar"/>
     </com.google.android.material.appbar.AppBarLayout>
 
+
     <TextView
         android:id="@+id/name"
         android:layout_width="wrap_content"
