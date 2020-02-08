@@ -1,6 +1,7 @@
 package com.example.navigationhaazrai;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,6 +19,9 @@ import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
+
+import static com.example.navigationhaazrai.Account.NAME;
+import static com.example.navigationhaazrai.Account.SHARED_PREF;
 
 public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -45,9 +49,10 @@ public class Home extends AppCompatActivity
         //edit
         View headerView = navigationView.getHeaderView(0);
         name = (TextView)headerView.findViewById(R.id.userName);
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREF, MODE_PRIVATE);
+        name.setText(sharedPreferences.getString(NAME,"USER NAME"));
         email = (TextView)headerView.findViewById(R.id.userEmail);
         picture = (ImageView)headerView.findViewById(R.id.imageView);
-        name.setText(Account.userName);
         email.setText(mAuth.getCurrentUser().getEmail());
         //edit
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -83,7 +88,11 @@ public class Home extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_date_wise) {
+            Intent intent = new Intent(getApplicationContext(),DateWise.class);
+            startActivity(intent);
+            return true;
+        }else if (id == R.id.action_settings) {
             return true;
         }
 
@@ -113,6 +122,8 @@ public class Home extends AppCompatActivity
             startActivity(intent);
         } else if (id == R.id.nav_log_out) {
             mAuth.signOut();
+            SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREF, MODE_PRIVATE);
+            sharedPreferences.edit().clear().commit();
             Intent intent = new Intent(getApplicationContext(),MainActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);

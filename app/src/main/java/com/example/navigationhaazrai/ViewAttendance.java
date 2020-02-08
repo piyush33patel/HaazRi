@@ -2,6 +2,7 @@ package com.example.navigationhaazrai;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,6 +31,21 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import static android.content.Context.MODE_PRIVATE;
+import static com.example.navigationhaazrai.Account.BRANCH;
+import static com.example.navigationhaazrai.Account.EMAIL;
+import static com.example.navigationhaazrai.Account.NAME;
+import static com.example.navigationhaazrai.Account.ROLLNO;
+import static com.example.navigationhaazrai.Account.SEMESTER;
+import static com.example.navigationhaazrai.Account.SHARED_PREF;
+import static com.example.navigationhaazrai.Account.YEAR;
+import static com.example.navigationhaazrai.Account.userBranch;
+import static com.example.navigationhaazrai.Account.userEmail;
+import static com.example.navigationhaazrai.Account.userName;
+import static com.example.navigationhaazrai.Account.userRollNo;
+import static com.example.navigationhaazrai.Account.userSemester;
+import static com.example.navigationhaazrai.Account.userYear;
+
 public class ViewAttendance extends Fragment {
     private RecyclerView mRecyclerView;
     private ViewAttendanceAdapter mAdapter;
@@ -53,6 +69,7 @@ public class ViewAttendance extends Fragment {
         buildRecyclerView(view);
         exampleList.add(0, new ViewAttendanceItem("       SUBJECTS", "T", "P", "A", "%"));
         showAttendance();
+        getAccount();
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -60,10 +77,10 @@ public class ViewAttendance extends Fragment {
                 buildRecyclerView(view);
                 exampleList.add(0, new ViewAttendanceItem("SUBJECT", "T", "P", "A", "%"));
                 showAttendance();
+                getAccount();
                 swipeRefreshLayout.setRefreshing(false);
             }
         });
-
         return view;
     }
 
@@ -115,6 +132,65 @@ public class ViewAttendance extends Fragment {
         };
         RequestQueue rq = Volley.newRequestQueue(getContext());
         rq.add(stringRequest);
+    }
+
+
+    public void saveData(){
+
+        SharedPreferences sharedPreferences = getContext().getSharedPreferences(SHARED_PREF, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(EMAIL,email);
+        editor.putString(NAME,userName);
+        editor.putString(ROLLNO, userRollNo);
+        editor.putString(BRANCH, userBranch);
+        editor.putString(SEMESTER, userSemester);
+        editor.putString(YEAR,userYear);
+        editor.apply();
+    }
+
+    public void getAccount(){
+            StringRequest stringRequest = new StringRequest(Request.Method.POST,Constants.URL_USER_ACCOUNT,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            JSONObject jsonObject;
+                            JSONArray jsonArray;
+                            try {
+                                jsonArray = new JSONArray(response);
+                                for (int i = 0; i < jsonArray.length(); i++) {
+                                    try {
+                                        jsonObject = jsonArray.getJSONObject(i);
+                                        userEmail = jsonObject.getString("email");
+                                        userName = jsonObject.getString("name");
+                                        userRollNo = jsonObject.getString("rollno");
+                                        userBranch = jsonObject.getString("branch");
+                                        userYear = jsonObject.getString("year");
+                                        userSemester = jsonObject.getString("semester");
+                                        saveData();
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            //Toast.makeText(getApplicationContext(), "Something went Wrong. Try again!!", Toast.LENGTH_LONG).show();
+                        }
+                    }) {
+                @Override
+                protected Map<String, String> getParams() throws AuthFailureError {
+                    Map<String, String> params = new HashMap<>();
+                    params.put("email", email);
+                    return params;
+                }
+            };
+            RequestQueue rq = Volley.newRequestQueue(getContext());
+            rq.add(stringRequest);
     }
 
     public void insertItem(String subject, int total, int present, int absent, int percent){

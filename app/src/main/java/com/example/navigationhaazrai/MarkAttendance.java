@@ -38,8 +38,7 @@ import java.util.Map;
 public class MarkAttendance extends Fragment {
     private int[] p = new int[10];
     private int[] a = new int[10];
-    private int[] addMth = {31,29,31,30,31,30,31,31,30,31,30,31};
-    private String [] weekDay = {"TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY","SUNDAY","MONDAY"};
+    private String [] weekDay = {"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
     private RecyclerView mRecyclerView;
     private MarkAttendanceAdapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -49,7 +48,7 @@ public class MarkAttendance extends Fragment {
     private String date, dayOfWeek;
     private ProgressDialog progressDialog;
     private JSONObject jsonObject;
-    private String email, message;
+    private String email;
     private ArrayList<String> fakeSubject, realSubject;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -69,8 +68,8 @@ public class MarkAttendance extends Fragment {
         final int month = calendar.get(Calendar.MONTH);
         final int year = calendar.get(Calendar.YEAR);
         date = getDate(year,month,day);
-        dayOfWeek = getDayOfWeek(month,day);
-        bt.setText(date);
+        dayOfWeek = weekDay[dayOfWeek(day,month+1,year)];
+        bt.setText(date + " (" +dayOfWeek+")");
         bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -86,8 +85,8 @@ public class MarkAttendance extends Fragment {
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
                 progressDialog.show();
                 date = getDate(year,month,day);
-                dayOfWeek = getDayOfWeek(month,day);
-                bt.setText(date);
+                dayOfWeek = weekDay[dayOfWeek(day,month+1,year)];
+                bt.setText(date + " (" +dayOfWeek+")");
                 createExampleList();
                 buildRecyclerView(view);
             }
@@ -133,16 +132,11 @@ public class MarkAttendance extends Fragment {
         return date;
     }
 
-    public String getDayOfWeek(int month, int day){
-        int sum = 0;
-        String dayOfWeek;
-        for(int k = 0; k < month; k++)
-        {
-            sum = sum + addMth[k];
-        }
-        sum = day + sum;
-        dayOfWeek = weekDay[sum%7];
-        return dayOfWeek;
+    public static int dayOfWeek(int d, int m, int y)
+    {
+        int t[] = { 0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4 };
+        y -= (m < 3) ? 1 : 0;
+        return ( y + y/4 - y/100 + y/400 + t[m-1] + d) % 7;
     }
 
     public void markTheAttendance(final String course, final String value){
