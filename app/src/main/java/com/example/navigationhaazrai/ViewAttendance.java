@@ -67,7 +67,7 @@ public class ViewAttendance extends Fragment {
         email = FirebaseAuth.getInstance().getCurrentUser().getEmail();
         exampleList = new ArrayList<>();
         buildRecyclerView(view);
-        exampleList.add(0, new ViewAttendanceItem("       SUBJECTS", "T", "P", "A", "%"));
+        exampleList.add(0, new ViewAttendanceItem("COURSE", "TOTAL", "PRESENT", "ABSENT", "PERCENT" , ""));
         showAttendance();
         getAccount();
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -75,7 +75,7 @@ public class ViewAttendance extends Fragment {
             public void onRefresh() {
                 exampleList = new ArrayList<>();
                 buildRecyclerView(view);
-                exampleList.add(0, new ViewAttendanceItem("SUBJECT", "T", "P", "A", "%"));
+                exampleList.add(0, new ViewAttendanceItem("COURSE", "TOTAL", "PRESENT", "ABSENT", "PERCENT", ""));
                 showAttendance();
                 getAccount();
                 swipeRefreshLayout.setRefreshing(false);
@@ -106,7 +106,33 @@ public class ViewAttendance extends Fragment {
                                     int per = 0;
                                     if (tot > 0)
                                         per = (pre*100)/tot;
-                                    insertItem(sub,tot,pre,abs,per);
+                                    /* message */
+                                    double x = 0;
+                                    String message="";
+                                    if(per<75)
+                                    {
+                                        x = (0.75*tot - pre)/(0.25);
+                                        int w = (int)x;
+                                        if(w==0)
+                                            message = "Waiting for the first class";
+                                        else if(w==1)
+                                            message = "Need to attend the next class";
+                                        else
+                                            message = "Need to attend next " + w + " classes";
+                                    }
+                                    else
+                                    {
+                                        x = (pre-0.75*tot)/(0.75);
+                                        int w = (int)x;
+                                        if(w==0)
+                                            message = "No leaves allowed";
+                                        else if(w==1)
+                                            message = "Could leave the next class";
+                                        else
+                                            message = "Could leave next " + w + " classes";
+                                    }
+                                    /* message */
+                                    insertItem(sub,tot,pre,abs,per,message);
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                 }
@@ -193,8 +219,8 @@ public class ViewAttendance extends Fragment {
             rq.add(stringRequest);
     }
 
-    public void insertItem(String subject, int total, int present, int absent, int percent){
-        exampleList.add(1, new ViewAttendanceItem(subject, ""+total, ""+present, ""+absent, ""+percent));
+    public void insertItem(String subject, int total, int present, int absent, int percent, String message){
+        exampleList.add(1, new ViewAttendanceItem(subject, ""+total, ""+present, ""+absent, ""+percent+"%", message));
         mAdapter.notifyItemInserted(1);
     }
 

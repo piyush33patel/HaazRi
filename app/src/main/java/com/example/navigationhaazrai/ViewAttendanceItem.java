@@ -1,15 +1,16 @@
 package com.example.navigationhaazrai;
 
 public class ViewAttendanceItem {
-    private  String mSubject, mTotal, mPresent, mAbsent, mPercent;
+    private  String mSubject, mTotal, mPresent, mAbsent, mPercent, mMessgae;
 
-    public ViewAttendanceItem(String subject, String total, String present, String absent, String percent)
+    public ViewAttendanceItem(String subject, String total, String present, String absent, String percent, String messgae)
     {
         mSubject = subject;
         mTotal = total;
         mPresent = present;
         mAbsent = absent;
         mPercent = percent;
+        mMessgae = messgae;
     }
 
     public String getmSubject() {
@@ -32,5 +33,6 @@ public class ViewAttendanceItem {
         return mPercent;
     }
 
+    public String getmMessgae() { return mMessgae; }
 }
 

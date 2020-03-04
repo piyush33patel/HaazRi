@@ -6,6 +6,7 @@
     <string name="nav_header_subtitle">user.email@gmail.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="action_date_wise">DateWise Attendance</string>
 
     <string name="menu_account">Account</string>
     <string name="menu_messages">Messages</string>

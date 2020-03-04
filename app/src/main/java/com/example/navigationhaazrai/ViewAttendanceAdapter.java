@@ -24,7 +24,7 @@ public class ViewAttendanceAdapter extends RecyclerView.Adapter<ViewAttendanceAd
     }
 
     public  static class ViewAttendanceHolder extends RecyclerView.ViewHolder{
-        public TextView subject, total, present, absent, percent;
+        public TextView subject, total, present, absent, percent, message;
         public ViewAttendanceHolder(View itemView, final OnItemClickListener listener) {
             super(itemView);
             subject = itemView.findViewById(R.id.subject);
@@ -32,6 +32,7 @@ public class ViewAttendanceAdapter extends RecyclerView.Adapter<ViewAttendanceAd
             present = itemView.findViewById(R.id.present);
             absent = itemView.findViewById(R.id.absent);
             percent = itemView.findViewById(R.id.percent);
+            message = itemView.findViewById(R.id.message);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -66,18 +67,19 @@ public class ViewAttendanceAdapter extends RecyclerView.Adapter<ViewAttendanceAd
         holder.present.setText(currentItem.getmPresent());
         holder.absent.setText(currentItem.getmAbsent());
         holder.percent.setText(currentItem.getmPercent());
+        holder.message.setText(currentItem.getmMessgae());
         if(position == 0)
         {
             holder.subject.setTextColor(Color.rgb(126,74,150));
             holder.subject.setTextSize(13);
             holder.total.setTextColor(Color.rgb(126,74,150));
-            holder.total.setTextSize(13);
+            holder.total.setTextSize(11);
             holder.present.setTextColor(Color.rgb(126,74,150));
-            holder.present.setTextSize(13);
+            holder.present.setTextSize(11);
             holder.absent.setTextColor(Color.rgb(126,74,150));
-            holder.absent.setTextSize(13);
+            holder.absent.setTextSize(11);
             holder.percent.setTextColor(Color.rgb(126,74,150));
-            holder.percent.setTextSize(13);
+            holder.percent.setTextSize(11);
         }
 
     }
