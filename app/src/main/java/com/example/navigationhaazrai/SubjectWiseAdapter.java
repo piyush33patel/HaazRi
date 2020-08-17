@@ -1,6 +1,5 @@
 package com.example.navigationhaazrai;
 
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,7 +43,6 @@ public class SubjectWiseAdapter extends RecyclerView.Adapter<SubjectWiseAdapter.
                             listener.onDeleteClick(position);
                         }
                     }
-
                 }
             });
         }
@@ -68,16 +66,6 @@ public class SubjectWiseAdapter extends RecyclerView.Adapter<SubjectWiseAdapter.
         holder.mTextView1.setText(currentItem.getmText1());
         holder.mTextView2.setText(currentItem.getmText2());
         holder.mTextView3.setText(currentItem.getmText3());
-        if(position == 0)
-        {
-            holder.mTextView1.setTextColor(Color.rgb(126,74,150));
-            holder.mTextView2.setTextColor(Color.rgb(126,74,150));
-            holder.mTextView3.setTextColor(Color.rgb(126,74,150));
-            holder.mTextView1.setTextSize(13);
-            holder.mTextView2.setTextSize(13);
-            holder.mTextView3.setTextSize(13);
-        }
-
     }
 
     @Override

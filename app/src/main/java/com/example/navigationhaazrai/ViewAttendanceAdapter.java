@@ -1,6 +1,5 @@
 package com.example.navigationhaazrai;
 
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -68,20 +67,6 @@ public class ViewAttendanceAdapter extends RecyclerView.Adapter<ViewAttendanceAd
         holder.absent.setText(currentItem.getmAbsent());
         holder.percent.setText(currentItem.getmPercent());
         holder.message.setText(currentItem.getmMessgae());
-        if(position == 0)
-        {
-            holder.subject.setTextColor(Color.rgb(126,74,150));
-            holder.subject.setTextSize(13);
-            holder.total.setTextColor(Color.rgb(126,74,150));
-            holder.total.setTextSize(11);
-            holder.present.setTextColor(Color.rgb(126,74,150));
-            holder.present.setTextSize(11);
-            holder.absent.setTextColor(Color.rgb(126,74,150));
-            holder.absent.setTextSize(11);
-            holder.percent.setTextColor(Color.rgb(126,74,150));
-            holder.percent.setTextSize(11);
-        }
-
     }
 
     @Override

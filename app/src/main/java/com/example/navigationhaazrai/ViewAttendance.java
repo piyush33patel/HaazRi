@@ -60,6 +60,10 @@ public class ViewAttendance extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_view_attendance, container, false);
+/*
+        Toolbar toolbar = (Toolbar) getActivity().findViewById(R.id.heading_toolbar);
+        ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
+*/
         swipeRefreshLayout = (SwipeRefreshLayout)view.findViewById(R.id.refresh);
         progressDialog = new ProgressDialog(getContext());
         progressDialog.setMessage("Loading....");
@@ -67,7 +71,6 @@ public class ViewAttendance extends Fragment {
         email = FirebaseAuth.getInstance().getCurrentUser().getEmail();
         exampleList = new ArrayList<>();
         buildRecyclerView(view);
-        exampleList.add(0, new ViewAttendanceItem("COURSE", "TOTAL", "PRESENT", "ABSENT", "PERCENT" , ""));
         showAttendance();
         getAccount();
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -75,7 +78,6 @@ public class ViewAttendance extends Fragment {
             public void onRefresh() {
                 exampleList = new ArrayList<>();
                 buildRecyclerView(view);
-                exampleList.add(0, new ViewAttendanceItem("COURSE", "TOTAL", "PRESENT", "ABSENT", "PERCENT", ""));
                 showAttendance();
                 getAccount();
                 swipeRefreshLayout.setRefreshing(false);
@@ -220,8 +222,8 @@ public class ViewAttendance extends Fragment {
     }
 
     public void insertItem(String subject, int total, int present, int absent, int percent, String message){
-        exampleList.add(1, new ViewAttendanceItem(subject, ""+total, ""+present, ""+absent, ""+percent+"%", message));
-        mAdapter.notifyItemInserted(1);
+        exampleList.add(0, new ViewAttendanceItem(subject, ""+total, ""+present, ""+absent, ""+percent+"%", message));
+        mAdapter.notifyItemInserted(0);
     }
 
 
@@ -235,15 +237,13 @@ public class ViewAttendance extends Fragment {
         mAdapter.setOnItemClickListener(new ViewAttendanceAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                if(position>0) {
                     realSubject = new ArrayList<>();
                     for (int i = fakeSubject.size() - 1; i >= 0; i--)
                         realSubject.add(fakeSubject.get(i));
                     Intent intent = new Intent(getContext(), SubjectWise.class);
-                    intent.putExtra("title", realSubject.get(position - 1));
+                    intent.putExtra("title", realSubject.get(position));
                     startActivity(intent);
                     mAdapter.notifyDataSetChanged();
-                }
             }
         });
     }

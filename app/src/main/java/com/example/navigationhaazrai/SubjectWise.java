@@ -45,11 +45,11 @@ public class SubjectWise extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+
         email = FirebaseAuth.getInstance().getCurrentUser().getEmail();
         exampleList = new ArrayList<>();
         title = getIntent().getStringExtra("title");
         toolbar.setSubtitle(title);
-        createExampleList();
         buildRecyclerView();
         showSubjectWise();
     }
@@ -58,10 +58,6 @@ public class SubjectWise extends AppCompatActivity {
         exampleList.remove(position);
         mAdapter.notifyItemRemoved(position);
         Toast.makeText(getApplicationContext(), "Removed", Toast.LENGTH_SHORT).show();
-    }
-
-    public void createExampleList(){
-        exampleList.add(new SubjectWiseItem("    DATE", "VALUE", "TIME"));
     }
     public void buildRecyclerView(){
         mRecyclerView = findViewById(R.id.recyclerView);
@@ -78,15 +74,11 @@ public class SubjectWise extends AppCompatActivity {
 
             @Override
             public void onDeleteClick(int position) {
-                if(position>0) {
                     removeItem(position);
                     deleteAttendanceTuple(position);
-                }
             }
         });
-
     }
-
 
     public void deleteAttendanceTuple(final int position){
         realDate = new ArrayList<>();
@@ -122,7 +114,7 @@ public class SubjectWise extends AppCompatActivity {
                 Map<String, String> params = new HashMap<>();
                 params.put("email", email);
                 params.put("title", title);
-                params.put("date", realDate.get(position-1));
+                params.put("date", realDate.get(position));
                 return params;
             }
         };
@@ -147,8 +139,8 @@ public class SubjectWise extends AppCompatActivity {
                                     fakeDate.add(date);
                                     String value = jsonObject.getString("value");
                                     String time = jsonObject.getString("time");
-                                    exampleList.add(1, new SubjectWiseItem(date,value,time));
-                                    mAdapter.notifyItemInserted(1);
+                                    exampleList.add(0, new SubjectWiseItem(date,value,time));
+                                    mAdapter.notifyItemInserted(0);
 
                                 } catch (JSONException e) {
                                     e.printStackTrace();

@@ -10,5 +10,5 @@ public class Constants {
     public static final String URL_NEW_USER = ROOT_URL + "HaazRi/NewUser.php";
     public static final String URL_USER_ACCOUNT = ROOT_URL + "HaazRi/Account.php";
     public static final String URL_DATE_WISE = ROOT_URL + "HaazRi/ActivityDayWise.php";
-
+    public static final String URL_UPDATES = ROOT_URL +"HaazRi/Haaz Ri.apk";
 }
