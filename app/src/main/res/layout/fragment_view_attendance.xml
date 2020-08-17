@@ -7,8 +7,14 @@
     android:background="@android:color/darker_gray"
     tools:context=".ViewAttendance">
 
+        <include
+            android:id="@+id/heading_toolbar"
+            layout="@layout/heading_toolbar"/>
+
+
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/refresh"
+            android:layout_marginTop="38dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
                 <androidx.recyclerview.widget.RecyclerView
