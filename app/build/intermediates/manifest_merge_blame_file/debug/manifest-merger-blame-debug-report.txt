@@ -1,0 +1,237 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.navigationhaazrai"
+4    android:versionCode="3"
+5    android:versionName="1.0.3" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="22"
+8-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml:5:5-67
+11-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml:5:22-64
+12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+12-->[com.google.firebase:firebase-database:16.0.4] /home/piyush/.gradle/caches/transforms-2/files-2.1/d20820c032bd09dde76d1e388df694e6/jetified-firebase-database-16.0.4/AndroidManifest.xml:22:5-79
+12-->[com.google.firebase:firebase-database:16.0.4] /home/piyush/.gradle/caches/transforms-2/files-2.1/d20820c032bd09dde76d1e388df694e6/jetified-firebase-database-16.0.4/AndroidManifest.xml:22:22-76
+13    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+13-->[com.google.firebase:firebase-iid:17.0.4] /home/piyush/.gradle/caches/transforms-2/files-2.1/61c2d37a2b5bb9f36aa582508632f193/jetified-firebase-iid-17.0.4/AndroidManifest.xml:24:5-68
+13-->[com.google.firebase:firebase-iid:17.0.4] /home/piyush/.gradle/caches/transforms-2/files-2.1/61c2d37a2b5bb9f36aa582508632f193/jetified-firebase-iid-17.0.4/AndroidManifest.xml:24:22-65
+14    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+14-->[com.google.firebase:firebase-iid:17.0.4] /home/piyush/.gradle/caches/transforms-2/files-2.1/61c2d37a2b5bb9f36aa582508632f193/jetified-firebase-iid-17.0.4/AndroidManifest.xml:26:5-82
+14-->[com.google.firebase:firebase-iid:17.0.4] /home/piyush/.gradle/caches/transforms-2/files-2.1/61c2d37a2b5bb9f36aa582508632f193/jetified-firebase-iid-17.0.4/AndroidManifest.xml:26:22-79
+15
+16    <application
+16-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml:7:5-47:19
+17        android:allowBackup="true"
+17-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml:8:9-35
+18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+18-->[androidx.core:core:1.0.1] /home/piyush/.gradle/caches/transforms-2/files-2.1/0366b82bd9a765520657eb8dbd32aa27/core-1.0.1/AndroidManifest.xml:22:18-86
+19        android:debuggable="true"
+20        android:icon="@mipmap/ic_launcher"
+20-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml:9:9-43
+21        android:label="@string/app_name"
+21-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml:10:9-41
+22        android:roundIcon="@mipmap/ic_launcher_round"
+22-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml:11:9-54
+23        android:supportsRtl="true"
+23-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml:12:9-35
+24        android:testOnly="true"
+25        android:theme="@style/AppTheme" >
+25-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml:13:9-40
+26        <activity
+26-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml:14:9-16:49
+27            android:name="com.example.navigationhaazrai.DateWise"
+27-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml:14:19-43
+28            android:label="DateWise Attendance"
+28-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml:15:13-48
+29            android:parentActivityName="com.example.navigationhaazrai.Home" />
+29-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml:16:13-47
+30        <activity
+30-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml:17:9-20:50
+31            android:name="com.example.navigationhaazrai.Updates"
+31-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml:18:13-36
+32            android:label="Updates"
+32-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml:19:13-36
+33            android:parentActivityName="com.example.navigationhaazrai.Home" />
+33-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml:20:13-47
+34        <activity
+34-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml:21:9-23:50
+35            android:name="com.example.navigationhaazrai.SubjectWise"
+35-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml:22:13-40
+36            android:parentActivityName="com.example.navigationhaazrai.Home" />
+36-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml:23:13-47
+37        <activity
+37-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml:24:9-27:50
+38            android:name="com.example.navigationhaazrai.Account"
+38-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml:25:13-36
+39            android:label="Account"
+39-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml:26:13-36
+40            android:parentActivityName="com.example.navigationhaazrai.Home" />
+40-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml:27:13-47
+41        <activity
+41-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml:28:9-30:50
+42            android:name="com.example.navigationhaazrai.WorkInProgress"
+42-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml:29:13-43
+43            android:parentActivityName="com.example.navigationhaazrai.Home" />
+43-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml:30:13-47
+44        <activity
+44-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml:31:9-34:50
+45            android:name="com.example.navigationhaazrai.NewAccountLogin"
+45-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml:32:13-44
+46            android:label="Create New Account"
+46-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml:33:13-47
+47            android:parentActivityName="com.example.navigationhaazrai.Home" />
+47-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml:34:13-47
+48        <activity
+48-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml:35:9-37:59
+49            android:name="com.example.navigationhaazrai.Home"
+49-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml:36:13-33
+50            android:theme="@style/AppTheme.NoActionBar" />
+50-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml:37:13-56
+51        <activity
+51-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml:38:9-46:20
+52            android:name="com.example.navigationhaazrai.MainActivity"
+52-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml:39:13-41
+53            android:theme="@style/AppTheme.NoActionBar" >
+53-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml:40:13-56
+54            <intent-filter>
+54-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml:41:13-45:29
+55                <action android:name="android.intent.action.MAIN" />
+55-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml:42:17-69
+55-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml:42:25-66
+56
+57                <category android:name="android.intent.category.LAUNCHER" />
+57-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml:44:17-77
+57-->/home/piyush/AndroidStudioProjects/HaazRi/app/src/main/AndroidManifest.xml:44:27-74
+58            </intent-filter>
+59        </activity>
+60        <activity
+60-->[com.google.firebase:firebase-auth:16.0.5] /home/piyush/.gradle/caches/transforms-2/files-2.1/004567925935b56ce0f031fecab3e57e/jetified-firebase-auth-16.0.5/AndroidManifest.xml:24:9-31:50
+61            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
+61-->[com.google.firebase:firebase-auth:16.0.5] /home/piyush/.gradle/caches/transforms-2/files-2.1/004567925935b56ce0f031fecab3e57e/jetified-firebase-auth-16.0.5/AndroidManifest.xml:25:13-85
+62            android:excludeFromRecents="true"
+62-->[com.google.firebase:firebase-auth:16.0.5] /home/piyush/.gradle/caches/transforms-2/files-2.1/004567925935b56ce0f031fecab3e57e/jetified-firebase-auth-16.0.5/AndroidManifest.xml:26:13-46
+63            android:exported="true"
+63-->[com.google.firebase:firebase-auth:16.0.5] /home/piyush/.gradle/caches/transforms-2/files-2.1/004567925935b56ce0f031fecab3e57e/jetified-firebase-auth-16.0.5/AndroidManifest.xml:27:13-36
+64            android:launchMode="singleTask"
+64-->[com.google.firebase:firebase-auth:16.0.5] /home/piyush/.gradle/caches/transforms-2/files-2.1/004567925935b56ce0f031fecab3e57e/jetified-firebase-auth-16.0.5/AndroidManifest.xml:28:13-44
+65            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
+65-->[com.google.firebase:firebase-auth:16.0.5] /home/piyush/.gradle/caches/transforms-2/files-2.1/004567925935b56ce0f031fecab3e57e/jetified-firebase-auth-16.0.5/AndroidManifest.xml:29:13-102
+66            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+66-->[com.google.firebase:firebase-auth:16.0.5] /home/piyush/.gradle/caches/transforms-2/files-2.1/004567925935b56ce0f031fecab3e57e/jetified-firebase-auth-16.0.5/AndroidManifest.xml:30:13-72
+67
+68        <service
+68-->[com.google.firebase:firebase-auth:16.0.5] /home/piyush/.gradle/caches/transforms-2/files-2.1/004567925935b56ce0f031fecab3e57e/jetified-firebase-auth-16.0.5/AndroidManifest.xml:33:9-39:19
+69            android:name="com.google.firebase.components.ComponentDiscoveryService"
+69-->[com.google.firebase:firebase-auth:16.0.5] /home/piyush/.gradle/caches/transforms-2/files-2.1/004567925935b56ce0f031fecab3e57e/jetified-firebase-auth-16.0.5/AndroidManifest.xml:34:13-84
+70            android:exported="false" >
+70-->[com.google.firebase:firebase-auth:16.0.5] /home/piyush/.gradle/caches/transforms-2/files-2.1/004567925935b56ce0f031fecab3e57e/jetified-firebase-auth-16.0.5/AndroidManifest.xml:35:13-37
+71            <meta-data
+71-->[com.google.firebase:firebase-auth:16.0.5] /home/piyush/.gradle/caches/transforms-2/files-2.1/004567925935b56ce0f031fecab3e57e/jetified-firebase-auth-16.0.5/AndroidManifest.xml:36:13-38:85
+72                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+72-->[com.google.firebase:firebase-auth:16.0.5] /home/piyush/.gradle/caches/transforms-2/files-2.1/004567925935b56ce0f031fecab3e57e/jetified-firebase-auth-16.0.5/AndroidManifest.xml:37:17-109
+73                android:value="com.google.firebase.components.ComponentRegistrar" />
+73-->[com.google.firebase:firebase-auth:16.0.5] /home/piyush/.gradle/caches/transforms-2/files-2.1/004567925935b56ce0f031fecab3e57e/jetified-firebase-auth-16.0.5/AndroidManifest.xml:38:17-82
+74            <meta-data
+74-->[com.google.firebase:firebase-iid:17.0.4] /home/piyush/.gradle/caches/transforms-2/files-2.1/61c2d37a2b5bb9f36aa582508632f193/jetified-firebase-iid-17.0.4/AndroidManifest.xml:32:13-34:85
+75                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+75-->[com.google.firebase:firebase-iid:17.0.4] /home/piyush/.gradle/caches/transforms-2/files-2.1/61c2d37a2b5bb9f36aa582508632f193/jetified-firebase-iid-17.0.4/AndroidManifest.xml:33:17-96
+76                android:value="com.google.firebase.components.ComponentRegistrar" />
+76-->[com.google.firebase:firebase-iid:17.0.4] /home/piyush/.gradle/caches/transforms-2/files-2.1/61c2d37a2b5bb9f36aa582508632f193/jetified-firebase-iid-17.0.4/AndroidManifest.xml:34:17-82
+77        </service>
+78        <!--
+79             FirebaseMessagingService performs security checks at runtime,
+80             no need for explicit permissions despite exported="true"
+81        -->
+82        <service
+82-->[com.google.firebase:firebase-messaging:17.3.4] /home/piyush/.gradle/caches/transforms-2/files-2.1/5ff29171aef1ea54fdc830dab7dfb660/jetified-firebase-messaging-17.3.4/AndroidManifest.xml:28:9-34:19
+83            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+83-->[com.google.firebase:firebase-messaging:17.3.4] /home/piyush/.gradle/caches/transforms-2/files-2.1/5ff29171aef1ea54fdc830dab7dfb660/jetified-firebase-messaging-17.3.4/AndroidManifest.xml:29:13-82
+84            android:exported="true" >
+84-->[com.google.firebase:firebase-messaging:17.3.4] /home/piyush/.gradle/caches/transforms-2/files-2.1/5ff29171aef1ea54fdc830dab7dfb660/jetified-firebase-messaging-17.3.4/AndroidManifest.xml:30:13-36
+85            <intent-filter android:priority="-500" >
+85-->[com.google.firebase:firebase-messaging:17.3.4] /home/piyush/.gradle/caches/transforms-2/files-2.1/5ff29171aef1ea54fdc830dab7dfb660/jetified-firebase-messaging-17.3.4/AndroidManifest.xml:31:13-33:29
+85-->[com.google.firebase:firebase-messaging:17.3.4] /home/piyush/.gradle/caches/transforms-2/files-2.1/5ff29171aef1ea54fdc830dab7dfb660/jetified-firebase-messaging-17.3.4/AndroidManifest.xml:31:28-51
+86                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+86-->[com.google.firebase:firebase-messaging:17.3.4] /home/piyush/.gradle/caches/transforms-2/files-2.1/5ff29171aef1ea54fdc830dab7dfb660/jetified-firebase-messaging-17.3.4/AndroidManifest.xml:32:17-78
+86-->[com.google.firebase:firebase-messaging:17.3.4] /home/piyush/.gradle/caches/transforms-2/files-2.1/5ff29171aef1ea54fdc830dab7dfb660/jetified-firebase-messaging-17.3.4/AndroidManifest.xml:32:25-75
+87            </intent-filter>
+88        </service>
+89
+90        <receiver
+90-->[com.google.firebase:firebase-iid:17.0.4] /home/piyush/.gradle/caches/transforms-2/files-2.1/61c2d37a2b5bb9f36aa582508632f193/jetified-firebase-iid-17.0.4/AndroidManifest.xml:37:9-44:20
+91            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+91-->[com.google.firebase:firebase-iid:17.0.4] /home/piyush/.gradle/caches/transforms-2/files-2.1/61c2d37a2b5bb9f36aa582508632f193/jetified-firebase-iid-17.0.4/AndroidManifest.xml:38:13-78
+92            android:exported="true"
+92-->[com.google.firebase:firebase-iid:17.0.4] /home/piyush/.gradle/caches/transforms-2/files-2.1/61c2d37a2b5bb9f36aa582508632f193/jetified-firebase-iid-17.0.4/AndroidManifest.xml:39:13-36
+93            android:permission="com.google.android.c2dm.permission.SEND" >
+93-->[com.google.firebase:firebase-iid:17.0.4] /home/piyush/.gradle/caches/transforms-2/files-2.1/61c2d37a2b5bb9f36aa582508632f193/jetified-firebase-iid-17.0.4/AndroidManifest.xml:40:13-73
+94            <intent-filter>
+94-->[com.google.firebase:firebase-iid:17.0.4] /home/piyush/.gradle/caches/transforms-2/files-2.1/61c2d37a2b5bb9f36aa582508632f193/jetified-firebase-iid-17.0.4/AndroidManifest.xml:41:13-43:29
+95                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+95-->[com.google.firebase:firebase-iid:17.0.4] /home/piyush/.gradle/caches/transforms-2/files-2.1/61c2d37a2b5bb9f36aa582508632f193/jetified-firebase-iid-17.0.4/AndroidManifest.xml:42:17-81
+95-->[com.google.firebase:firebase-iid:17.0.4] /home/piyush/.gradle/caches/transforms-2/files-2.1/61c2d37a2b5bb9f36aa582508632f193/jetified-firebase-iid-17.0.4/AndroidManifest.xml:42:25-78
+96            </intent-filter>
+97        </receiver>
+98        <!--
+99             FirebaseInstanceIdService performs security checks at runtime,
+100             no need for explicit permissions despite exported="true"
+101        -->
+102        <service
+102-->[com.google.firebase:firebase-iid:17.0.4] /home/piyush/.gradle/caches/transforms-2/files-2.1/61c2d37a2b5bb9f36aa582508632f193/jetified-firebase-iid-17.0.4/AndroidManifest.xml:50:9-56:19
+103            android:name="com.google.firebase.iid.FirebaseInstanceIdService"
+103-->[com.google.firebase:firebase-iid:17.0.4] /home/piyush/.gradle/caches/transforms-2/files-2.1/61c2d37a2b5bb9f36aa582508632f193/jetified-firebase-iid-17.0.4/AndroidManifest.xml:51:13-77
+104            android:exported="true" >
+104-->[com.google.firebase:firebase-iid:17.0.4] /home/piyush/.gradle/caches/transforms-2/files-2.1/61c2d37a2b5bb9f36aa582508632f193/jetified-firebase-iid-17.0.4/AndroidManifest.xml:52:13-36
+105            <intent-filter android:priority="-500" >
+105-->[com.google.firebase:firebase-iid:17.0.4] /home/piyush/.gradle/caches/transforms-2/files-2.1/61c2d37a2b5bb9f36aa582508632f193/jetified-firebase-iid-17.0.4/AndroidManifest.xml:53:13-55:29
+105-->[com.google.firebase:firebase-iid:17.0.4] /home/piyush/.gradle/caches/transforms-2/files-2.1/61c2d37a2b5bb9f36aa582508632f193/jetified-firebase-iid-17.0.4/AndroidManifest.xml:53:28-51
+106                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+106-->[com.google.firebase:firebase-iid:17.0.4] /home/piyush/.gradle/caches/transforms-2/files-2.1/61c2d37a2b5bb9f36aa582508632f193/jetified-firebase-iid-17.0.4/AndroidManifest.xml:54:17-80
+106-->[com.google.firebase:firebase-iid:17.0.4] /home/piyush/.gradle/caches/transforms-2/files-2.1/61c2d37a2b5bb9f36aa582508632f193/jetified-firebase-iid-17.0.4/AndroidManifest.xml:54:25-77
+107            </intent-filter>
+108        </service>
+109
+110        <activity
+110-->[com.google.android.gms:play-services-base:16.0.1] /home/piyush/.gradle/caches/transforms-2/files-2.1/f3cdb4752796acc7922580e9b00bab3f/jetified-play-services-base-16.0.1/AndroidManifest.xml:23:9-26:75
+111            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+111-->[com.google.android.gms:play-services-base:16.0.1] /home/piyush/.gradle/caches/transforms-2/files-2.1/f3cdb4752796acc7922580e9b00bab3f/jetified-play-services-base-16.0.1/AndroidManifest.xml:24:13-79
+112            android:exported="false"
+112-->[com.google.android.gms:play-services-base:16.0.1] /home/piyush/.gradle/caches/transforms-2/files-2.1/f3cdb4752796acc7922580e9b00bab3f/jetified-play-services-base-16.0.1/AndroidManifest.xml:25:13-37
+113            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+113-->[com.google.android.gms:play-services-base:16.0.1] /home/piyush/.gradle/caches/transforms-2/files-2.1/f3cdb4752796acc7922580e9b00bab3f/jetified-play-services-base-16.0.1/AndroidManifest.xml:26:13-72
+114
+115        <provider
+115-->[com.google.firebase:firebase-common:16.0.3] /home/piyush/.gradle/caches/transforms-2/files-2.1/ad0bd8fc938e35a8494c5dac48dce391/jetified-firebase-common-16.0.3/AndroidManifest.xml:10:9-14:39
+116            android:name="com.google.firebase.provider.FirebaseInitProvider"
+116-->[com.google.firebase:firebase-common:16.0.3] /home/piyush/.gradle/caches/transforms-2/files-2.1/ad0bd8fc938e35a8494c5dac48dce391/jetified-firebase-common-16.0.3/AndroidManifest.xml:11:13-77
+117            android:authorities="com.example.navigationhaazrai.firebaseinitprovider"
+117-->[com.google.firebase:firebase-common:16.0.3] /home/piyush/.gradle/caches/transforms-2/files-2.1/ad0bd8fc938e35a8494c5dac48dce391/jetified-firebase-common-16.0.3/AndroidManifest.xml:12:13-72
+118            android:exported="false"
+118-->[com.google.firebase:firebase-common:16.0.3] /home/piyush/.gradle/caches/transforms-2/files-2.1/ad0bd8fc938e35a8494c5dac48dce391/jetified-firebase-common-16.0.3/AndroidManifest.xml:13:13-37
+119            android:initOrder="100" />
+119-->[com.google.firebase:firebase-common:16.0.3] /home/piyush/.gradle/caches/transforms-2/files-2.1/ad0bd8fc938e35a8494c5dac48dce391/jetified-firebase-common-16.0.3/AndroidManifest.xml:14:13-36
+120
+121        <meta-data
+121-->[com.google.android.gms:play-services-basement:16.1.0] /home/piyush/.gradle/caches/transforms-2/files-2.1/f16cf835f28664e2317b0e36daac4a6b/jetified-play-services-basement-16.1.0/AndroidManifest.xml:23:9-25:69
+122            android:name="com.google.android.gms.version"
+122-->[com.google.android.gms:play-services-basement:16.1.0] /home/piyush/.gradle/caches/transforms-2/files-2.1/f16cf835f28664e2317b0e36daac4a6b/jetified-play-services-basement-16.1.0/AndroidManifest.xml:24:13-58
+123            android:value="@integer/google_play_services_version" />
+123-->[com.google.android.gms:play-services-basement:16.1.0] /home/piyush/.gradle/caches/transforms-2/files-2.1/f16cf835f28664e2317b0e36daac4a6b/jetified-play-services-basement-16.1.0/AndroidManifest.xml:25:13-66
+124
+125        <provider
+125-->[androidx.lifecycle:lifecycle-process:2.0.0] /home/piyush/.gradle/caches/transforms-2/files-2.1/463c2f3c229a2eb6a8590567122b1390/jetified-lifecycle-process-2.0.0/AndroidManifest.xml:23:9-27:43
+126            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+126-->[androidx.lifecycle:lifecycle-process:2.0.0] /home/piyush/.gradle/caches/transforms-2/files-2.1/463c2f3c229a2eb6a8590567122b1390/jetified-lifecycle-process-2.0.0/AndroidManifest.xml:24:13-79
+127            android:authorities="com.example.navigationhaazrai.lifecycle-process"
+127-->[androidx.lifecycle:lifecycle-process:2.0.0] /home/piyush/.gradle/caches/transforms-2/files-2.1/463c2f3c229a2eb6a8590567122b1390/jetified-lifecycle-process-2.0.0/AndroidManifest.xml:25:13-69
+128            android:exported="false"
+128-->[androidx.lifecycle:lifecycle-process:2.0.0] /home/piyush/.gradle/caches/transforms-2/files-2.1/463c2f3c229a2eb6a8590567122b1390/jetified-lifecycle-process-2.0.0/AndroidManifest.xml:26:13-37
+129            android:multiprocess="true" />
+129-->[androidx.lifecycle:lifecycle-process:2.0.0] /home/piyush/.gradle/caches/transforms-2/files-2.1/463c2f3c229a2eb6a8590567122b1390/jetified-lifecycle-process-2.0.0/AndroidManifest.xml:27:13-40
+130    </application>
+131
+132</manifest>

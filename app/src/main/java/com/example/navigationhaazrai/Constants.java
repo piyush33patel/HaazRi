@@ -1,7 +1,7 @@
 package com.example.navigationhaazrai;
 
 public class Constants {
-    private static final String ROOT_URL = "/";             /*Website Unavailable*/
+    private static final String ROOT_URL = "https://websiteasofjunetwelve.000webhostapp.com/";
     public static final String URL_VIEW_ATTENDANCE = ROOT_URL + "HaazRi/ViewAttendance.php";
     public static final String URL_MARK_ATTENDANCE = ROOT_URL + "HaazRi/MarkAttendance.php";
     public static final String URL_TIME_TABLE_DAY_WISE = ROOT_URL + "HaazRi/TimeTableDayWise.php";
